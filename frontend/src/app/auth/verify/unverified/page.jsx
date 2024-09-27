@@ -13,7 +13,7 @@ const Unverified = () => {
   return (
     <div className="flex flex-col items-center justify-center h-screen w-screen">
       <img
-        src={'/logos/Karymitra b.png'}
+        src={'/logos/library.png'}
         alt="unverified"
         className="w-full max-w-md -mb-[30px] -mt-10"
       />

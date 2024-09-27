@@ -177,8 +177,8 @@ const ProfileBanner = ({ serviceProvider }) => {
                         <div className=" flex justify-center items-center gap-1">
                           <div className="text-lg">By</div>
                           <Image
-                            src="/logos/Karymitra b.png"
-                            alt="Badge From Karymitra"
+                            src="/logos/library.png"
+                            alt="Badge From library"
                             width="70"
                             height="70"
                           />

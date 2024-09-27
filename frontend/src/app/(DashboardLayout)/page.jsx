@@ -18,7 +18,7 @@ export default function Dashboard() {
         <div className="flex justify-center items-center h-screen">Loading...</div>
       ) : (
         <div className="text-center text-4xl p-10">
-          <h1 className="mb-6">BookMySlot</h1>
+          <h1 className="mb-6">librain</h1>
           <p className="text-xl leading-relaxed">
 
           </p>

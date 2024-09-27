@@ -4,7 +4,7 @@ const initialState = {
   activeDir: 'ltr',
   // activeMode: window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light', // Default to user's system preference
   activeMode: 'dark', // Default to user's system preference
-  activeTheme: 'PURPLE_THEME', // BLUE_THEME, GREEN_THEME, BLACK_THEME, PURPLE_THEME, ORANGE_THEME
+  activeTheme: 'BLUE_THEME', // BLUE_THEME, GREEN_THEME, BLACK_THEME, PURPLE_THEME, ORANGE_THEME
   SidebarWidth: 270,
   MiniSidebarWidth: 87,
   TopbarHeight: 75,
