@@ -1,3 +1,8 @@
 import databaseConnection from "./connection.js";
 import userRepository from "./repository/user-repository.js";
-export { databaseConnection, userRepository};
+import bookRepository from "./repository/book-repository.js";
+
+export { databaseConnection, userRepository, bookRepository};
+
+
+

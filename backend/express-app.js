@@ -5,6 +5,7 @@ import HandleErrors from "./utils/error-handler.js";
 import cookieParser from "cookie-parser";
 import { Server } from "socket.io";
 import http from "http";
+import books from "./api/books.js";
 
 const expressApp = async (app) => {
   // Create an HTTP server and pass the Express app to it
@@ -33,7 +34,7 @@ const expressApp = async (app) => {
 
   // Initialize API routes with Socket.IO
   user(app);
-
+  books(app);
   // Error handling middleware
   app.use(HandleErrors);
 

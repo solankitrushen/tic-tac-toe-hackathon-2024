@@ -78,6 +78,7 @@ const user = (app) => {
     }
   });
 
+
   app.post("/auth/verifyUser", async (req, res, next) => {
     try {
       const { userAuthToken: token } = req.cookies;
