@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux';
 import Link from 'next/link';
 import { styled } from '@mui/material/styles';
 import Image from 'next/image';
-import { Box } from '@mui/material';
 
 const Logo = () => {
   const customizer = useSelector((state) => state.customizer);
@@ -17,16 +16,21 @@ const Logo = () => {
     return (
       <LinkStyled href="/">
         {customizer.activeMode === 'dark' ? (
-          <Box sx={{ fontSize: '30px', mt: '25px', ml: '20px', fontWeight: 'bold' }}>
-            <span className="text-blue-500">T</span>ri <span className="text-blue-500">O</span>rbiter
-          </Box>
-        ) : (
           <Image
-            src={'/logos/logo.png'}
+            src="/logos/Karymitra b.png"
             alt="logo"
             height={customizer.TopbarHeight}
             width={190}
-            className=" ml-3 "
+            className="mt-2 ml-3 "
+            priority
+          />
+        ) : (
+          <Image
+            src={'/logos/Karymitra b.png'}
+            alt="logo"
+            height={customizer.TopbarHeight}
+            width={190}
+            className="mt-2 ml-3 "
             priority
           />
         )}
@@ -38,20 +42,20 @@ const Logo = () => {
     <LinkStyled href="/">
       {customizer.activeMode === 'dark' ? (
         <Image
-          src="/logos/tri-orbiter.png"
+          src="/logos/Karymitra b.png"
           alt="logo"
           height={customizer.TopbarHeight}
           width={190}
-          className=" ml-3 "
+          className="mt-2 ml-3 "
           priority
         />
       ) : (
         <Image
-          src="/logos/tri-orbiter.png"
+          src="/logos/Karymitra b.png"
           alt="logo"
           height={customizer.TopbarHeight}
           width={190}
-          className=" ml-3 "
+          className="mt-2 ml-3 "
           priority
         />
       )}

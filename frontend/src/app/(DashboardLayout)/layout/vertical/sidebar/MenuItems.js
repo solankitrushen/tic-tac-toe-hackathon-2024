@@ -54,7 +54,6 @@ import {
   IconUserHeart,
   IconUserShare,
   IconCpu2,
-  IconBrandReact,
 } from '@tabler/icons-react';
 const Menuitems = [
   {
@@ -68,7 +67,6 @@ const Menuitems = [
     icon: IconCpu2,
     href: '/',
   },
-
 
 
   // {
@@ -97,6 +95,7 @@ const Menuitems = [
   //     },
   //   ],
   // },
+  
 ];
 
 export default Menuitems;

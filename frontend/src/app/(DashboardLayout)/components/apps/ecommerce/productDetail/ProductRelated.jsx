@@ -7,6 +7,7 @@ import Skeleton from '@mui/material/Skeleton';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts } from '@/store/apps/eCommerce/ECommerceSlice';
 import Link from 'next/link';
 import BlankCard from '../../../shared/BlankCard';
 import Image from 'next/image';

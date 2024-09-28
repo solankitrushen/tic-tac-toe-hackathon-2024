@@ -40,11 +40,10 @@ const AuthLogin = ({ title, subtitle, subtext }) => {
         console.log('USER', registeredUser.data);
         if (registeredUser.status === 200 && registeredUser.data.loggedIn) {
           toast.success('You logged in successfully!');
-          if (true) {
+          if (process.env.NEXT_PUBLIC_APP_DEPLOYED) {
             document.cookie = `userAuthToken=${registeredUser.data.token}; expires=${new Date(
-              Date.now() + 15 * 24 * 60 * 60 * 1000
-            ).toUTCString()}; path=/; domain=.glitchastra.com; Secure; SameSite=None`;
-    
+              Date.now() + 15 * 24 * 60 * 60 * 1000,
+            ).toUTCString()}; path=/; domain=.glitchastra.com; SameSite=None; Secure`;
             router.push('/');
           }
           document.cookie = `userAuthToken=${registeredUser.data.token}; expires=${new Date(

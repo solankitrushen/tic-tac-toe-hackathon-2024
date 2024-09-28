@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import Link from 'next/link';
 import { IconMinus, IconPlus, IconTrash } from '@tabler/icons-react';
 import { useDispatch, useSelector } from 'react-redux';
+import { increment, deleteCart, decrement } from '@/store/apps/eCommerce/ECommerceSlice';
 import Image from 'next/image';
 
 const AddToCart = () => {

@@ -27,7 +27,7 @@ const Profile = () => {
   };
   const handleLogout = async () => {
     signOut();
-    if (process.env.NEXT_PUBLIC_APP_DEPLOYED  ) {
+    if (process.env.NEXT_PUBLIC_APP_DEPLOYED) {
       document.cookie = `userAuthToken=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; domain=.glitchastra.com; SameSite=None; Secure`;
       router.push('/auth/login');
     }
@@ -102,7 +102,7 @@ const Profile = () => {
             </Typography>
           </Box>
         </Stack>
-        {/* <Divider /> */}
+        <Divider />
         {dropdownData.profile.map((profile) => (
           <Box key={profile.title}>
             <Box sx={{ py: 2, px: 0 }} className="hover-text-primary">

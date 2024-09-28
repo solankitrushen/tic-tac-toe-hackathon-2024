@@ -4,6 +4,7 @@ import { Grid } from '@mui/material';
 import Breadcrumb from '@/app/(DashboardLayout)/layout/shared/breadcrumb/Breadcrumb';
 import PageContainer from '@/app/(DashboardLayout)/components/container/PageContainer';
 
+import TopCards from '@/app/(DashboardLayout)/components/dashboards/modern/TopCards';
 
 
 const BCrumb = [

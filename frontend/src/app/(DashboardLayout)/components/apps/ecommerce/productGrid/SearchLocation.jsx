@@ -4,6 +4,8 @@ import TextField from '@mui/material/TextField';
 import { IconMapPin } from '@tabler/icons-react';
 import { useDispatch } from 'react-redux';
 import { Autocomplete, useJsApiLoader } from '@react-google-maps/api';
+import { SearchProduct } from '@/store/apps/eCommerce/ECommerceSlice';
+import { getCoordinates, getLocation } from '@/store/map/getLocation';
 
 export default function LocationSearch({ setCoordinates }) {
   const dispatch = useDispatch();

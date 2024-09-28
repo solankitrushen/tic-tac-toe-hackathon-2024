@@ -19,12 +19,7 @@ export default function Dashboard() {
       ) : (
         <div className="text-center text-4xl p-10">
           <h1 className="mb-6">librain</h1>
-          <p className="text-xl leading-relaxed">
-
-          </p>
-          <p className="text-xl leading-relaxed mt-4">
-          
-          </p>
+          <p className="text-xl leading-relaxed"></p>
         </div>
       )}
     </PageContainer>

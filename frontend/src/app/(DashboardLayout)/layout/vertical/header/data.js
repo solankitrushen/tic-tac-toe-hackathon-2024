@@ -47,12 +47,12 @@ const notifications = [
 // Profile dropdown
 //
 const profile = [
-  // {
-  //   href: '/profile',
-  //   title: 'My Profile',
-  //   subtitle: 'Account Settings',
-  //   icon: '/images/svgs/icon-account.svg',
-  // },
+  {
+    href: '/profile',
+    title: 'My Profile',
+    subtitle: 'Account Settings',
+    icon: '/images/svgs/icon-account.svg',
+  },
   // {
   //   href: "/",
   //   title: "My Inbox",

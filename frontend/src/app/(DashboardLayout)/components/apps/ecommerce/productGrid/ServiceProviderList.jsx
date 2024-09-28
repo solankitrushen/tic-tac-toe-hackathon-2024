@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
+import { filterReset } from '@/store/apps/eCommerce/ECommerceSlice';
+import ServiceProviderSearch from './ServiceProviderSearch';
 import { IconUserPlus, IconMenu2 } from '@tabler/icons-react';
 // import AlertCart from '../serviceProviderCart/AlertCart';
 import BlankCard from '../../../shared/BlankCard';

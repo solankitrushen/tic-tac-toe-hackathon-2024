@@ -102,7 +102,7 @@ const HiringFormSP = ({ serviceProviderId }) => {
 
   const createAddress = async (address) => {
     try {
-      const addedAddress = await axios.post('/addAddress', address);
+      const addedAddress = await axios.post('/user/addAddress', address);
       console.log(addedAddress.data);
       CustomToast({
         message: 'Address updated successfully!!',

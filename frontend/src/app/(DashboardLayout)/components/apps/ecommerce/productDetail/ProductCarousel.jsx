@@ -11,6 +11,7 @@ import SliderData from './SliderData';
 import './Carousel.css';
 
 //fetch product
+import { fetchProducts } from '@/store/apps/eCommerce/ECommerceSlice';
 
 const ProductCarousel = () => {
   const [state, setState] = React.useState({ nav1: null, nav2: null });

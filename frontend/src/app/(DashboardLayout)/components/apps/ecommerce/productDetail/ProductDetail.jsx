@@ -16,6 +16,7 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchProducts, addToCart } from '@/store/apps/eCommerce/ECommerceSlice';
 import { IconCheck, IconMinus, IconPlus } from '@tabler/icons-react';
 import AlertCart from '../productCart/AlertCart';
 

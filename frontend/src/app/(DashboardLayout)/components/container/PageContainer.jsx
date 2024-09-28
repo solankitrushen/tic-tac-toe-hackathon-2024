@@ -5,7 +5,7 @@ const PageContainer = ({ title, description, children }) => (
   <HelmetProvider>
     <div>
       <Helmet>
-        <title>{title} library</title>
+        <title>{title} User By KaryMitra</title>
         <meta name="description" content={description} />
       </Helmet>
       {children}

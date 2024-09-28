@@ -90,7 +90,7 @@ const ProfileBanner = ({ serviceProvider }) => {
               },
             }}
           >
-            {/* <Stack direction="row" textAlign="center" justifyContent="center" gap={6} m={3}>
+            <Stack direction="row" textAlign="center" justifyContent="center" gap={6} m={3}>
               <Box>
                 <Typography className="flex justify-center items-center" color="text.secondary">
                   <IconFileDescription width="20" />
@@ -124,7 +124,7 @@ const ProfileBanner = ({ serviceProvider }) => {
                   Reviews
                 </Typography>
               </Box>
-            </Stack> */}
+            </Stack>
           </Grid>
           {/* about profile */}
           <Grid
@@ -154,8 +154,8 @@ const ProfileBanner = ({ serviceProvider }) => {
                   <Avatar
                     src={
                       serviceProvider
-                        ? `${process.env.NEXT_PUBLIC_BASE_URL}/userProfileImages/${serviceProvider?.profileImagePath}`
-                        : `${process.env.NEXT_PUBLIC_BASE_URL}/userProfileImages/${user?.profileImagePath}`
+                        ? `${process.env.NEXT_PUBLIC_BASE_URL}/user/userProfileImages/${serviceProvider?.profileImagePath}`
+                        : `${process.env.NEXT_PUBLIC_BASE_URL}/user/userProfileImages/${user?.profileImagePath}`
                     }
                     alt="profileImage"
                     sx={{
@@ -177,8 +177,8 @@ const ProfileBanner = ({ serviceProvider }) => {
                         <div className=" flex justify-center items-center gap-1">
                           <div className="text-lg">By</div>
                           <Image
-                            src="/logos/library.png"
-                            alt="Badge From library"
+                            src="/logos/Karymitra b.png"
+                            alt="Badge From librain"
                             width="70"
                             height="70"
                           />
@@ -217,7 +217,7 @@ const ProfileBanner = ({ serviceProvider }) => {
             }}
           >
             <Stack direction="row" textAlign="center" justifyContent="start" gap={6} m={3}>
-              {/* <Box>
+              <Box>
                 <Typography className="flex justify-center items-center" color="text.secondary">
                   <IconMilitaryRank width="22" />
                 </Typography>
@@ -233,7 +233,7 @@ const ProfileBanner = ({ serviceProvider }) => {
                 <Typography color="textSecondary" variant="h6" fontWeight={400}>
                   Specializations
                 </Typography>
-              </Box> */}
+              </Box>
             </Stack>
           </Grid>
         </Grid>

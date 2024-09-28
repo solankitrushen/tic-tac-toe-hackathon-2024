@@ -22,7 +22,7 @@ const AddressSelectionAndAddition = ({ values, setFieldValue }) => {
     const fetchAddresses = async () => {
       try {
         if (user.userId) {
-          const fetchedAddresses = await axios.get(`/fetchAddresses`);
+          const fetchedAddresses = await axios.get(`/user/fetchAddresses`);
           if (fetchedAddresses.status === 200 && fetchedAddresses.data.length > 0) {
             const addresses = fetchedAddresses?.data?.map((address) => {
               const newAddress = {};

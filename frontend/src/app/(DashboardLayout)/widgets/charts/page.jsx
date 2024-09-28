@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { Grid } from '@mui/material';
 import Breadcrumb from '@/app/(DashboardLayout)/layout/shared/breadcrumb/Breadcrumb';
 import PageContainer from '@/app/(DashboardLayout)/components/container/PageContainer';
+import YearlyBreakup from '@/app/(DashboardLayout)/components/dashboards/modern/YearlyBreakup';
 
 const BCrumb = [
   {
@@ -29,7 +30,9 @@ const WidgetCharts = () => {
       <Grid container spacing={3}>
         <Grid item xs={12} lg={4}>
           <Grid container spacing={3}>
-          
+            <Grid item xs={12}>
+              <YearlyBreakup isLoading={isLoading} />
+            </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12} lg={4}>

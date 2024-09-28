@@ -33,7 +33,7 @@ const LinkAuthentication = () => {
       <div className="flex flex-col items-center justify-center h-screen">
         <div className="flex justify-center items-center">
           <img
-            src={'/logos/library.png'}
+            src={'/logos/Karymitra b.png'}
             className="w-[400px] -mt-[110px]"
             alt="Verification"
           />
