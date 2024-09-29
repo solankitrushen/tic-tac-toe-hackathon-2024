@@ -1,6 +1,7 @@
 import bookService from "../services/book-service.js"; // Assuming you have a book service
 import uploadBooksToS3 from "../api/middlewares/uploadBookToS3.js"; // Import the S3 upload middleware
 import { AWS_BUCKET_NAME, AWS_REGION } from "../config/index.js";
+import bookModel from "../database/models/books.js";
 
 const books = (app) => {
   const service = new bookService();
@@ -11,7 +12,7 @@ const books = (app) => {
   });
 
   // Add a new book (with file upload to S3)
-  app.post("/books/add", async (req, res, next) => {
+  app.post("/addbooks", async (req, res, next) => {
     try {
       const { title, author, description } = req.body;
 
@@ -19,6 +20,7 @@ const books = (app) => {
         title,
         author,
         description,
+        bookUrl,
       };
 
       const { data } = await service.addBook(newBook);
@@ -31,19 +33,42 @@ const books = (app) => {
   app.post(
     "/uploadBooksToS3",
     uploadBooksToS3.single("bookFile"),
+    async (req, res) => {
+      try {
+        // Construct the file URL
+        const fileUrl = `https://${AWS_BUCKET_NAME}.s3.${AWS_REGION}.amazonaws.com/${req.file.key}`;
 
-    (req, res) => {
-      const fileUrl = `https://${AWS_BUCKET_NAME}.s3.${AWS_REGION}.amazonaws.com/${req.file.key}`;
-      res.status(200).json({
-        status: "success",
-        message: "uploaded successfully!",
-        imageUrl: fileUrl,
-      });
+        // Create or update the book entry in the database
+        // const bookId = req.body.bookId; // Assuming you pass the book ID in the request body
+        // const updatedBook = await bookModel.findOneAndUpdate(
+        //   bookId,
+        //   { pdfUrl: fileUrl }, // Add the URL to the schema
+        //   { new: true }
+        // );
+
+        // if (!updatedBook) {
+        //   return res.status(404).json({
+        //     status: "error",
+        //     message: "Book not found",
+        //   });
+        // }
+        return res.status(200).json({
+          status: "success",
+          message: "Uploaded successfully!",
+          pdfUrl: fileUrl,
+        });
+      } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+          status: "error",
+          message: "An error occurred while uploading the book.",
+        });
+      }
     }
   );
 
   // Get all books
-  app.get("/books/list", async (req, res, next) => {
+  app.get("/list", async (req, res, next) => {
     try {
       const books = await service.getAllBooks();
       return res.json(books);
@@ -53,7 +78,7 @@ const books = (app) => {
   });
 
   // Get a book by ID
-  app.get("/books/:id", async (req, res, next) => {
+  app.get("/list/:id", async (req, res, next) => {
     try {
       const { id } = req.params;
       const book = await service.getBookById(id);
@@ -81,8 +106,6 @@ const books = (app) => {
       next(err);
     }
   });
-
-
 };
 
 export default books;

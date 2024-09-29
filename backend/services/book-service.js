@@ -1,7 +1,6 @@
 import { bookRepository } from "../database/index.js";
 import { formateData } from "../utils/index.js";
 import { APIError } from "../utils/app-errors.js";
-import uploadBookFile from "../api/middlewares/uploadBookToS3.js";
 // All Business logic for books will be here
 export default class bookService {
   constructor() {
@@ -10,11 +9,10 @@ export default class bookService {
 
   // Add a new book and upload its file
   async addBook(bookInputs, file) {
-    const { bookName, bookDesc, isbn } = bookInputs;
+    const { bookName, bookDesc, isbn, bookUrl} = bookInputs;
 
     try {
       // Upload the PDF file to storage (like AWS S3 or any other storage service)
-      const bookUrl = await uploadBookFile(file);
 
       // Add the book URL to bookInputs
       bookInputs.bookUrl = bookUrl;
@@ -127,6 +125,23 @@ export default class bookService {
       } else {
         return formateData({
           message: "Book not found",
+        });
+      }
+    } catch (err) {
+      throw new APIError("Data Not found", err);
+    }
+  }
+  async getAllBooks() {
+    try {
+      const books = await this.repository.findAllBooks(); // Assuming you have a findAllBooks method in your repository
+  
+      if (books && books.length > 0) {
+        return formateData({
+          books,
+        });
+      } else {
+        return formateData({
+          message: "No books found",
         });
       }
     } catch (err) {

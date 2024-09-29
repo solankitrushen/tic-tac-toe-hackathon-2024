@@ -83,4 +83,16 @@ export default class bookRepository {
       );
     }
   }
+  async findAllBooks() {
+    try {
+      const books = await bookModel.find(); // This retrieves all book records from the database
+      return books;
+    } catch (err) {
+      throw new APIError(
+        "API Error",
+        STATUS_CODES.INTERNAL_ERROR,
+        "Unable to find all books"
+      );
+    }
+  }
 }

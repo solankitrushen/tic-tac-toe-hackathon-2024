@@ -15,24 +15,21 @@ const bookSchema = new mongoose.Schema(
     },
     bookName: {
       type: String,
-      require: true,
+    
     },
     bookDesc: {
       type: String,
-      require: true,
     },
     bookUrl: {
       type: String,
-      require: true, // URL for the uploaded PDF
     },
     isbn: {
       type: String,
-      unique: true,
       require: true,
     },
     author: {
       type: String,
-      require: true, 
+      require: true,
     },
     publicationDate: {
       type: Date,

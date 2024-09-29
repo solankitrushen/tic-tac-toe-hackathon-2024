@@ -67,7 +67,20 @@ const Menuitems = [
     icon: IconCpu2,
     href: '/',
   },
-
+  {
+    id: uniqueId(),
+    title: 'Books',
+    icon: IconLayout,
+    href: '',
+    children: [
+      {
+        id: uniqueId(),
+        title: 'addBooks',
+        icon: IconPoint,
+        href: '/addbooks',
+      }
+    ],
+  },
 
   // {
   //   id: uniqueId(),
